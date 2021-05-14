@@ -1,0 +1,137 @@
+.content {
+  /* display: flex; */
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+svg#clouds {
+  position: fixed;
+  bottom: -160px;
+  left: -230px;
+  /* z-index: -10; */
+  width: 1720px;
+}
+
+.description {
+  left: 50%;
+  position: absolute;
+  top: 45%;
+  transform: translate(-50%, -55%);
+  text-align: center;
+  display: inline-block;
+}
+
+.description h1 {
+  color: #6ab446;
+}
+
+.description p {
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.description button {
+  border:1px solid #6ab446;
+  background:#162e44e1;
+  border-radius: 15px;
+  color:#fff;
+}
+
+.description button:hover {
+  border:3px solid #6ab446;
+  background:rgb(162, 196, 235);
+  color:#000;
+  /* width: 100px; */
+  border-radius: 0;
+  transition: all 1s ease-out;
+}
+
+/* landing page animation */
+.animation-area{
+  background: linear-gradient(to top left,#17232E,#1479BB,#151F2A);
+  /* background: linear-gradient(to top left,#8942a8,#ba382f,#8942a8);  */
+  width: 100%;
+  height:700px;
+}
+
+.box-area{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.box-area li{
+    position: absolute;
+    display: block;
+    /* list-style: none; */
+    width: 25px;
+    height: 25px;
+    background: #967fc0e1;
+    /* backdrop-filter: blur(2rem); */
+    animation: animate 20s linear infinite;
+    bottom: -200px;
+}
+.box-area li:nth-child(1){
+    left: 86%;
+    width: 80px;
+    height: 80px;
+    border-radius: 10%;
+    animation-delay: 0s;
+}
+.box-area li:nth-child(2){
+    left: 12%;
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    animation-delay: 2.5s;
+    animation-duration: 10s;
+}
+.box-area li:nth-child(3){
+    left: 70%;
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    animation-delay: 5.5s;
+}
+.box-area li:nth-child(4){
+    left: 42%;
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    animation-delay: 0s;
+    animation-duration: 15s;
+}
+.box-area li:nth-child(5){
+    left: 65%;
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    animation-delay: 0s;
+}
+.box-area li:nth-child(6){
+    left: 15%;
+    width: 110px;
+    height: 110px;
+    border-radius: 10%;
+    animation-delay: 3.5s;
+    /* animation-duration: 15s; */
+}
+@keyframes animate{
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* landing page animation */

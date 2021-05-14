@@ -1,0 +1,122 @@
+/* My styles added */
+.form-panel{
+  margin-top: 25%;
+  margin-bottom: 50%;
+}
+
+.box{
+  padding: 40px;
+  top: 50%;
+  left: 50%;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(.5rem);
+  text-align: center;
+  align-items: center;
+  border-radius: 15px;
+  justify-items: center;
+  width: 400px;
+}
+
+
+.box h2{
+  color: white;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  /* font-family: 'Kalam', cursive; */
+  /* text-transform: uppercase; */
+  font-weight: 500;
+}
+
+.form{
+  padding: 30px 40px;
+}
+
+.mygroup{
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.box label{
+  display: inline-block;
+  /* font-family: 'Kalam', cursive; */
+  /* color: white; */
+  font-size: 20px;
+  margin-bottom: 1px;
+}
+.box sup{
+  color: red;
+  font-size: medium;
+}
+
+input{
+  /* border: 0; */
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  font-size: large;
+  border: 3px solid #74a1e9;
+  /* padding: 14px 10px; */
+  padding: 20px;
+  height: 50px;
+  width: 220px;
+  outline: none;
+  color: rgb(6, 8, 17);
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+::placeholder{
+  color: rgb(4, 56, 134);
+}
+
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus,
+.box input[type="email"]:focus{
+  width: 250px;
+  border-color: #010375;
+}
+
+.box button[type="submit"]{
+  width: 100px;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 3px solid #010375;
+  padding: 14px 10px;
+  /* width: 220px; */
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-radius: 15px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box button[type="submit"]:hover{
+  background: #0268c2e1;
+  border-color: #2ecc71;
+}
+
+.form_control.success input{
+  border-color: #2ecc71;
+}
+.form_control.error input{
+  border-color: #e74c3c;
+}
+
+.form_control p.alert-text-danger{
+  color: darkred;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.form_control p.alert-text-success{
+  color: rgb(8, 78, 8);
+  font-size: 15px;
+  font-weight: bold;
+}

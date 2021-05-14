@@ -1,0 +1,99 @@
+<div class="container" style="margin-top: 8%;">
+  <div class="row">
+    <h4><span>Welcome </span></h4>
+
+  </div>
+  <div class="row"> My Chats </div>
+</div>
+  <!-- <div class="row">
+    <div class="col-lg-3">
+      <a routerLink="contacts">iChat Contacts</a>
+      <br>
+      <a routerLink="chatwith">Arun</a>
+    </div>
+    <div class="col-lg-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div> -->
+
+  <div class="container-fluid h-100">
+    <div class="row justify-content-center h-100">
+      <div class="col-md-4 col-xl-3 chat chat-container">
+                  <div class="card mb-sm-3 mb-md-0 contacts_card">
+          <div class="card-header my-info text-center">
+            <div class="img_cont" style="margin-left: 105px;">
+              <img [src]="this._auth.baseURL+'/profile_images/default_userpic.png'" class="rounded-circle user_img">
+              <span class="online_icon"></span>
+            </div>
+            <!-- <div class="user_info" style="align-items: center;">
+              <h4>You</h4>
+            </div> -->
+            <br>
+            <div class="text-center">
+                <button class="btn btn-info" [routerLink]="['/chat/mycontacts']">Show My iChat Contacts</button>
+            </div>
+          </div>
+          <!-- <hr> -->
+          <div class="btn-text text-center">
+            <a class="btn btn-info" [routerLink]="['/chat/contacts']">Show All iChat Contacts</a>
+          </div>
+          <!-- <hr> -->
+        <div class="card-header">
+          <div class="input-group">
+            <input type="text" placeholder="Search..." name="" class="form-control search">
+            <div class="input-group-prepend">
+              <span class="input-group-text search_btn"><i class="fas fa-search"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body contacts_body scroll">
+          <ul class="contacts">
+          <li class="active">
+            <div class="d-flex bd-highlight" [routerLink]="['/chat/chatwith']">
+              <div class="img_cont">
+                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img">
+                <span class="online_icon"></span>
+              </div>
+              <div class="user_info">
+                <span>Khalid</span>
+                <p>Kalid is online</p>
+              </div>
+
+            </div>
+          </li>
+          <li>
+            <div class="d-flex bd-highlight">
+              <div class="img_cont">
+                <img src="https://2.bp.blogspot.com/-8ytYF7cfPkQ/WkPe1-rtrcI/AAAAAAAAGqU/FGfTDVgkcIwmOTtjLka51vineFBExJuSACLcBGAs/s320/31.jpg" class="rounded-circle user_img">
+                <span class="online_icon offline"></span>
+              </div>
+              <div class="user_info">
+                <span>Taherah Big</span>
+                <p>Taherah left 7 mins ago</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="d-flex bd-highlight">
+              <div class="img_cont">
+                <img src="https://i.pinimg.com/originals/ac/b9/90/acb990190ca1ddbb9b20db303375bb58.jpg" class="rounded-circle user_img">
+                <span class="online_icon"></span>
+              </div>
+              <div class="user_info">
+                <span>Sami Rafi</span>
+                <p>Sami is online</p>
+              </div>
+            </div>
+          </li>
+
+          </ul>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+          </div>
+      <div class="col-md-8 col-xl-8 chat chat-container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+

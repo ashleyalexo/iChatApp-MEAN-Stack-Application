@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Lato', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+  color: white;
+  /* background: linear-gradient(to top,#2980b9,#2c3e50); */
+  background: linear-gradient(to top,#1479BB,#1e2c3b);
+}

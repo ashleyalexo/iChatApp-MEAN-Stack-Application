@@ -1,0 +1,109 @@
+
+<div class="container" >
+  <div class="row g-3" style="align-content: center;">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="form-panel" style="width: fit-content;">
+        <!-- signup form -->
+        <div class="box signup-form  form-container">
+          <h2 class="form-heading">Sign-up an account</h2>
+          <hr>
+          <!-- Success msg -->
+          <div *ngIf="successMsg" class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>{{successMsg}}</strong>
+          </div>
+          <!-- Error msg -->
+          <div *ngIf="errorMsg" class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>{{errorMsg}}</strong>
+          </div>
+
+          <form class="form" id="form" #signupform="ngForm" (ngSubmit)="signupUser()" >
+
+            <div class="form_group mygroup">
+              <label for="fname">Full Name</label>
+              <sup>*</sup>
+              <input type="text" placeholder="Enter Full Name" [(ngModel)]="user.user_name"
+                     id="fname" name="fullname" #fullname="ngModel" style="width:100%;"
+                     [ngClass]="{'form-control': true,
+                      'is-invalid': !fullname?.valid && fullname?.touched,
+                      'is-valid'  : fullname?.valid}"
+                      required pattern="^[a-zA-Z ]+$">
+            <!-- error -->
+            <div *ngIf="!fullname?.valid && fullname?.touched" class="alert alert-danger">
+              <div *ngIf="fullname?.errors?.required">FullName is required</div>
+              <div *ngIf="fullname?.errors?.pattern">Must be alphabets</div>
+            </div>
+            <!-- error -->
+            </div>
+
+            <div class="form_group mygroup">
+                <label for="email">Email Address</label>
+                <sup>*</sup>
+                <input type="email" placeholder="Enter Email Address" [(ngModel)]="user.user_email"
+                       id="email" name="email" #email="ngModel" autocomplete="off" style="width:100%;"
+                       [ngClass]="{'form-control': true,
+                      'is-invalid': !email?.valid && email?.touched,
+                      'is-valid'  : email?.valid}"
+                      required email>
+                <!-- <p>Error message</p> -->
+              <!-- error -->
+              <div *ngIf="!email?.valid && email?.touched" class="alert alert-danger">
+                <div *ngIf="email?.errors?.required">Email is required</div>
+                <div *ngIf="email?.errors?.email">Enter a valid email</div>
+              </div>
+              <!-- error -->
+            </div>
+            <!-- <div formGroupName="PasswordValidation"> -->
+              <div class="form_group mygroup">
+                  <label for="password">Password</label>
+                  <sup>*</sup>
+                  <input type="password" placeholder="Enter Password" [(ngModel)]="user.user_password"
+                        id="password" name="password" #password="ngModel" style="width: 100%;"
+                        [ngClass]="{'form-control': true,
+                        'is-invalid': !password?.valid && password?.touched,
+                        'is-valid'  : password?.valid}"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+                <!-- error -->
+                <div *ngIf="!password?.valid && password?.touched" class="alert alert-danger">
+                  <div *ngIf="password?.errors?.required">Password is required</div>
+                  <div *ngIf="password?.errors?.pattern">Invalid Password. <br> Please Note:-Password should contain minimum 8 characters. It should contain atleast 1 lower case,1 uppercase,1 number and 1 special character.</div>
+                </div>
+                <!-- error -->
+              </div>
+              <div class="form_group mygroup">
+                  <label for="password2">Confirm Password</label>
+                  <sup>*</sup>
+                  <input  type="password" placeholder="Retype Password"
+                          id="password2" name="confirmPassword" #cpassword="ngModel" [(ngModel)]="user.user_cpassword" style="width: 100%;"
+                          [ngClass]="{'form-control': true,
+                          'is-invalid': !cpassword?.valid && cpassword?.touched,
+                          'is-valid'  : cpassword?.valid}"
+                          required>
+                  <!-- <p>Error message</p> -->
+                <!-- error -->
+                <div *ngIf="!cpassword?.valid && cpassword?.touched" class="alert alert-danger">
+                  <div *ngIf="cpassword.errors.required">Must Retype Password</div>
+                </div>
+                <div *ngIf="cpassword.valid && cpassword?.touched && (password.value != cpassword.value)"  class="alert alert-danger">
+                  <small class="text-danger" >Password and Confirm Password do not match</small>
+                </div>
+                <!-- error -->
+              </div>
+
+            <!-- </div> -->
+            <button class="btn btn-primary" type="submit" [disabled]="signupform.invalid" >Submit</button>
+            <br>
+            <label><a class="login-link" [routerLink]="['/login']" > Click here</a>  to login to your account.</label>
+          </form>
+        </div>
+        <!-- signup form -->
+      </div>
+    </div><!--/col-6-->
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+
+<hr>

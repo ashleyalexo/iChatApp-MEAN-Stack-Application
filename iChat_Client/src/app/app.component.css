@@ -1,0 +1,26 @@
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+  /* background-image: url('../assets/img/pattern.svg'); */
+}
+
+/* #wall{
+  height: auto;
+  width:auto;
+} */
+
+
+svg#clouds {
+  position: fixed;
+  bottom: -160px;
+  left: -230px;
+  z-index: -10;
+  width: 1920px;
+  /* background: rgb(165, 108, 223); */
+  /* background-image: url('../assets/img/pattern.svg'); */
+
+}

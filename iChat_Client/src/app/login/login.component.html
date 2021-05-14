@@ -1,0 +1,59 @@
+<div class="container" >
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="form-panel" style="width: fit-content;">
+        <!-- login form -->
+        <div class="box">
+          <h2>User Login </h2>
+          <hr>
+          <!-- Success msg -->
+          <div *ngIf="successMsg" class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>{{successMsg}}</strong>
+          </div>
+          <!-- Error msg -->
+          <div *ngIf="errorMsg" class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>{{errorMsg}}</strong>
+          </div>
+          <form  id="loginform" style="width:100%;" #loginform="ngForm" (ngSubmit)="loginUser()">
+            <br>
+            <div class="form-group mygroup">
+              <input type="text" name="username" id="username" [(ngModel)]="user.user_email"
+                     placeholder="Enter Email" #email="ngModel" autocomplete="off"
+                     [ngClass]="{'form-control': true,
+                      'is-invalid': !email?.valid && email?.touched,
+                      'is-valid'  : email?.valid}"
+                      required email>
+              <div *ngIf="!email?.valid && email?.touched" class="alert alert-danger">
+                <div *ngIf="email?.errors?.required">Email is required</div>
+                <div *ngIf="email?.errors?.email">Enter a valid email</div>
+              </div>
+            </div>
+            <!-- <hr> -->
+            <div class="form-group mygroup">
+              <input type="password" name="password" id="password" [(ngModel)]="user.user_password"
+                      placeholder="Enter Password" #password="ngModel"
+                      [ngClass]="{'form-control': true,
+                      'is-invalid': !password?.valid && password?.touched,
+                      'is-valid'  : password?.valid}"
+                      required minlength="8">
+              <!-- <p>Error message</p> -->
+              <div *ngIf="!password?.valid && password?.touched" class="alert alert-danger">
+                <div *ngIf="password?.errors?.required">Password is required</div>
+                <div *ngIf="password?.errors?.minlength">Must be of 8 characters</div>
+              </div>
+            </div>
+            <!-- <br> -->
+            <button id="submit-button" type="submit" [disabled]="loginform.invalid">Login</button>
+            <br>
+            <label><a class="signup-link" [routerLink]="['/register']" > Click here</a>  to create an account.</label>
+          </form>
+        </div>
+        <!-- login form -->
+      </div>
+    </div><!--/col-12-->
+    <div class="col-md-4"></div>
+  </div>
+</div>
